@@ -45,7 +45,7 @@ class DetailViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = whiteTextAttribute
         view.backgroundColor = .black
         
-        let url = URL(string: "https://s3.amazonaws.com/kargopolov/kukushka.mp3")
+        let url = URL(string: song.song_link)
         let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
         player = AVPlayer(playerItem: playerItem)
         let playerLayer=AVPlayerLayer(player: player)
