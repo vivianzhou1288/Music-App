@@ -45,6 +45,7 @@ class DetailViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = whiteTextAttribute
         view.backgroundColor = .black
         
+        // music does not play unless it is a MP3 link
         let url = URL(string: song.song_link)
         let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
         player = AVPlayer(playerItem: playerItem)
@@ -53,8 +54,7 @@ class DetailViewController: UIViewController {
         self.view.layer.addSublayer(playerLayer)
         
         
-//        picImageView.image = UIImage(named: song.image[0].url)
-//        print(song.image[0].url)
+        // image does not display if you reload app, networking issues
         if !song.image.isEmpty{
             picImageView.load(urlString: song.image[0].url)
         }
